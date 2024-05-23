@@ -1,0 +1,295 @@
+==51404== Memcheck, a memory error detector
+==51404== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51404== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51404== Command: ./package-dependency-new
+==51404== 
+
+  clib_package_dependency_new
+    ✓ should return NULL when given bad input
+    ✓ should return a clib-dependency when given valid input
+    ✓ should transform "*" to "master"
+    ✓ should default to "clibs" when no repo author is given
+
+==51404== 
+==51404== HEAP SUMMARY:
+==51404==     in use at exit: 0 bytes in 0 blocks
+==51404==   total heap usage: 4,226 allocs, 4,226 frees, 204,593 bytes allocated
+==51404== 
+==51404== All heap blocks were freed -- no leaks are possible
+==51404== 
+==51404== For lists of detected and suppressed errors, rerun with: -s
+==51404== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==51405== Memcheck, a memory error detector
+==51405== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51405== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51405== Command: ./package-install
+==51405== 
+
+  clib_package_install
+    ✓ should return -1 when given a bad package
+    ✓ should install the pkg in its own directory
+       fetch : stephenmathieson/case.c:src/case.c
+       fetch : stephenmathieson/case.c:src/case.h
+        save : ./test/fixtures/case/case.c
+        save : ./test/fixtures/case/case.h
+    ✓ should install the package's clib.json or package.json
+    ✓ should install the package's sources
+    ✓ should install the package's dependencies
+    ✓ should not install the package's development dependencies
+    ✓ should install itself
+
+==51405== 
+==51405== HEAP SUMMARY:
+==51405==     in use at exit: 3,288 bytes in 8 blocks
+==51405==   total heap usage: 557,259 allocs, 557,251 frees, 38,281,001 bytes allocated
+==51405== 
+==51405== LEAK SUMMARY:
+==51405==    definitely lost: 0 bytes in 0 blocks
+==51405==    indirectly lost: 0 bytes in 0 blocks
+==51405==      possibly lost: 0 bytes in 0 blocks
+==51405==    still reachable: 3,288 bytes in 8 blocks
+==51405==         suppressed: 0 bytes in 0 blocks
+==51405== Reachable blocks (those to which a pointer was found) are not shown.
+==51405== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==51405== 
+==51405== For lists of detected and suppressed errors, rerun with: -s
+==51405== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==51562== Memcheck, a memory error detector
+==51562== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51562== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51562== Command: ./package-install-dependencies
+==51562== 
+
+  clib_package_install_dependencies
+    ✓ should return -1 when given a bad package
+    ✓ should install the dep in its own directory
+    ✓ should install the dependency's package.json
+    ✓ should install the dependency's sources
+    ✓ should install the dependency's dependencies
+    ✓ should handle unresolved packages
+
+==51562== 
+==51562== HEAP SUMMARY:
+==51562==     in use at exit: 3,288 bytes in 8 blocks
+==51562==   total heap usage: 285,025 allocs, 285,017 frees, 19,535,876 bytes allocated
+==51562== 
+==51562== LEAK SUMMARY:
+==51562==    definitely lost: 0 bytes in 0 blocks
+==51562==    indirectly lost: 0 bytes in 0 blocks
+==51562==      possibly lost: 0 bytes in 0 blocks
+==51562==    still reachable: 3,288 bytes in 8 blocks
+==51562==         suppressed: 0 bytes in 0 blocks
+==51562== Reachable blocks (those to which a pointer was found) are not shown.
+==51562== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==51562== 
+==51562== For lists of detected and suppressed errors, rerun with: -s
+==51562== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==51654== Memcheck, a memory error detector
+==51654== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51654== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51654== Command: ./package-install-dev-dependencies
+==51654== 
+
+  clib_package_install_development
+    ✓ should return -1 when given a bad package
+    ✓ should return -1 when given a bad dir
+    ✓ should install the package's development dependencies
+
+==51654== 
+==51654== HEAP SUMMARY:
+==51654==     in use at exit: 3,288 bytes in 8 blocks
+==51654==   total heap usage: 276,093 allocs, 276,085 frees, 13,249,892 bytes allocated
+==51654== 
+==51654== LEAK SUMMARY:
+==51654==    definitely lost: 0 bytes in 0 blocks
+==51654==    indirectly lost: 0 bytes in 0 blocks
+==51654==      possibly lost: 0 bytes in 0 blocks
+==51654==    still reachable: 3,288 bytes in 8 blocks
+==51654==         suppressed: 0 bytes in 0 blocks
+==51654== Reachable blocks (those to which a pointer was found) are not shown.
+==51654== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==51654== 
+==51654== For lists of detected and suppressed errors, rerun with: -s
+==51654== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==51705== Memcheck, a memory error detector
+==51705== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51705== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51705== Command: ./package-load-from-manifest
+==51705== 
+
+  clib_package_load_from_manifest
+        info : reading local ./clib.json
+    ✓ should load a package from a file if available
+
+==51705== 
+==51705== HEAP SUMMARY:
+==51705==     in use at exit: 0 bytes in 0 blocks
+==51705==   total heap usage: 1,354 allocs, 1,354 frees, 110,076 bytes allocated
+==51705== 
+==51705== All heap blocks were freed -- no leaks are possible
+==51705== 
+==51705== For lists of detected and suppressed errors, rerun with: -s
+==51705== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==51706== Memcheck, a memory error detector
+==51706== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51706== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51706== Command: ./package-load-manifest-file
+==51706== 
+
+  clib_package_load_local_manifest
+        info : reading local clib.json
+    ✓ should load a local package if available
+
+==51706== 
+==51706== HEAP SUMMARY:
+==51706==     in use at exit: 0 bytes in 0 blocks
+==51706==   total heap usage: 1,354 allocs, 1,354 frees, 110,076 bytes allocated
+==51706== 
+==51706== All heap blocks were freed -- no leaks are possible
+==51706== 
+==51706== For lists of detected and suppressed errors, rerun with: -s
+==51706== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==51707== Memcheck, a memory error detector
+==51707== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51707== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51707== Command: ./package-new
+==51707== 
+
+  clib_package_new
+    ✓ should return NULL when given broken json
+    ✓ should return NULL when given a bad string
+    ✓ should return a clib_package when given valid json
+    ✓ should support missing src
+
+==51707== 
+==51707== HEAP SUMMARY:
+==51707==     in use at exit: 0 bytes in 0 blocks
+==51707==   total heap usage: 1,468 allocs, 1,468 frees, 107,309 bytes allocated
+==51707== 
+==51707== All heap blocks were freed -- no leaks are possible
+==51707== 
+==51707== For lists of detected and suppressed errors, rerun with: -s
+==51707== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==51708== Memcheck, a memory error detector
+==51708== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51708== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51708== Command: ./package-new-from-slug
+==51708== 
+
+  clib_package_new_from_slug
+    ✓ should return NULL when given a bad slug
+    ✓ should return NULL when given a slug missing a name
+    ✓ should return NULL when given slug which doesn't resolve
+    ✓ should build the correct package
+    ✓ should force package version numbers
+    ✓ should use package version if version not provided
+    ✓ should save the package's json
+
+==51708== 
+==51708== HEAP SUMMARY:
+==51708==     in use at exit: 797,330 bytes in 11,523 blocks
+==51708==   total heap usage: 143,993 allocs, 132,470 frees, 7,001,357 bytes allocated
+==51708== 
+==51708== LEAK SUMMARY:
+==51708==    definitely lost: 0 bytes in 0 blocks
+==51708==    indirectly lost: 0 bytes in 0 blocks
+==51708==      possibly lost: 0 bytes in 0 blocks
+==51708==    still reachable: 797,330 bytes in 11,523 blocks
+==51708==         suppressed: 0 bytes in 0 blocks
+==51708== Reachable blocks (those to which a pointer was found) are not shown.
+==51708== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==51708== 
+==51708== For lists of detected and suppressed errors, rerun with: -s
+==51708== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==51732== Memcheck, a memory error detector
+==51732== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51732== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51732== Command: ./package-parse-author
+==51732== 
+
+  clib_package_parse_author
+    ✓ should return NULL when given a bad slug
+    ✓ should return NULL when unable to parse an author
+    ✓ should default to "clibs"
+    ✓ should support "author/name"-style slugs
+    ✓ should support "author/name@version"-slugs slugs
+    ✓ should not be affected after the slug is freed
+
+==51732== 
+==51732== HEAP SUMMARY:
+==51732==     in use at exit: 0 bytes in 0 blocks
+==51732==   total heap usage: 1,307 allocs, 1,307 frees, 104,072 bytes allocated
+==51732== 
+==51732== All heap blocks were freed -- no leaks are possible
+==51732== 
+==51732== For lists of detected and suppressed errors, rerun with: -s
+==51732== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==51733== Memcheck, a memory error detector
+==51733== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51733== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51733== Command: ./package-parse-name
+==51733== 
+
+  clib_package_parse_name
+    ✓ should return NULL when given a bad slug
+    ✓ should return NULL when unable to parse a name
+    ✓ should support the "name"-style slugs
+    ✓ should support "author/name"-style slugs
+    ✓ should support "author/name@version"-slugs slugs
+    ✓ should not be affected after the slug is freed
+
+==51733== 
+==51733== HEAP SUMMARY:
+==51733==     in use at exit: 0 bytes in 0 blocks
+==51733==   total heap usage: 1,313 allocs, 1,313 frees, 104,108 bytes allocated
+==51733== 
+==51733== All heap blocks were freed -- no leaks are possible
+==51733== 
+==51733== For lists of detected and suppressed errors, rerun with: -s
+==51733== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==51742== Memcheck, a memory error detector
+==51742== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51742== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51742== Command: ./package-parse-version
+==51742== 
+
+  clib_package_parse_version
+    ✓ should return NULL when given a bad slug
+    ✓ should default to "master"
+    ✓ should transform "*" to "master"
+    ✓ should support "name"-style slugs
+    ✓ should support "name@version"-style slugs
+    ✓ should support "author/name@version"-style slugs
+    ✓ should not be affected after the slug is freed
+
+==51742== 
+==51742== HEAP SUMMARY:
+==51742==     in use at exit: 0 bytes in 0 blocks
+==51742==   total heap usage: 1,348 allocs, 1,348 frees, 104,281 bytes allocated
+==51742== 
+==51742== All heap blocks were freed -- no leaks are possible
+==51742== 
+==51742== For lists of detected and suppressed errors, rerun with: -s
+==51742== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==51746== Memcheck, a memory error detector
+==51746== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==51746== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==51746== Command: ./package-url
+==51746== 
+
+  clib_package_url
+    ✓ should return NULL when given a bad author
+    ✓ should return NULL when given a bad name
+    ✓ should return NULL when given a bad version
+    ✓ should build a GitHub url
+
+==51746== 
+==51746== HEAP SUMMARY:
+==51746==     in use at exit: 0 bytes in 0 blocks
+==51746==   total heap usage: 1,294 allocs, 1,294 frees, 103,953 bytes allocated
+==51746== 
+==51746== All heap blocks were freed -- no leaks are possible
+==51746== 
+==51746== For lists of detected and suppressed errors, rerun with: -s
+==51746== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+rm package-parse-name.o package-url.o package-parse-author.o package-install.o package-load-manifest-file.o package-parse-version.o package-new.o package-dependency-new.o package-install-dev-dependencies.o package-new-from-slug.o package-install-dependencies.o package-load-from-manifest.o
